@@ -1,0 +1,138 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;  
+}
+
+.page-header {
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-size: 16px;
+    color: white;
+    font-weight: bold;
+    background-color: #000f2f;
+}
+
+#list-view {
+    background-image: url(./images/sara-cohen-Skcr6X_aLjU-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+.grid-container {
+    margin: 0 20px 20px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-gap: 20px;
+    align-content: center;
+
+}
+.card-header, .card-footer {
+    background: #F8F8F8;
+}
+button {
+    margin: 30px;
+    background-color: #461e4c;;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+}
+
+.card-header {
+  background-color: #711d46;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.card-footer {
+    background-color: #e6c087;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+
+.card-body p {
+    margin: 5px;
+    padding: 5px;
+}
+
+.form-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url(./images/leone-venter-VieM9BdZKFo-unsplash.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+#form {
+    flex: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+
+}
+
+#date-and-buttons > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+#date-and-buttons > li {
+    flex: auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+}
+
+#form label {
+    color: black;
+    font-weight: bold;
+}
+
+
+#form > input, #form > textarea {
+    margin-bottom: 5vh;
+}
+
+#posted-at  {
+    margin-top: 0;
+    padding-top:0
+}
+
+#reading-mode {   
+    background: #f6edde;
+    height: 100vh;
+    width: 100%;
+}
+
+#reading-mode h1, p {
+    margin: 30px;
+}
+
+#reading-mode p {
+    font-size: 1.2rem;
+}
+
+#reading-mode h1 {
+    text-align: center;
+    font-weight: bold;
+}
+
+#reading-mode img {
+    object-fit: contain;
+    max-height: 40vh;
+    width: 100%;
+}

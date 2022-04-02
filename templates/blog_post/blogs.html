@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% verbatim %}
+    <div id="app">
+        <header class="page-header">
+            <h1>The World's Most Private Collection of True and Imaginary Stories</h1>
+            <p><em>with sincere thanks to artists at Unsplash!</em></p>
+        </header>
+        <div v-if="showForm" class="form-center">
+            <form id="form">
+                <label for="posted_by">Your Name</label><br>
+                <input type="text" name="posted_by" id="posted_by" v-model="blog.posted_by" size="100" placeholder="Today, I am feeling like..."><br>
+                <label for="title">Title</label><br>
+                <input type="text" name="title" id="title" v-model="blog.title" size="100" placeholder="I'm gonna tell you about..."><br>
+                <label for="content">Content</label><br>
+                <textarea name="context" id="content" cols="98" rows="15" v-model="blog.content" placeholder="All this happened, more or less..."></textarea><br>
+                <div id="date-and-buttons">
+                    <ul>
+                        <li>
+                            <label for="posted_at" id="posted_at_label">Posted At</label><br>
+                            <input type="datetime-local" name="posted_at" id="posted_at" v-model="blog.posted_at"><br>
+                        </li>
+                        <li>
+                            <button id="post" @click.prevent="createPost">Create This Post</button>
+                        </li>
+                        <li>
+                            <button id="back" @click.prevent="takeMeBack">Nope, Take Me Back!</button>
+                        </li>
+                    </ul>
+                </div>        
+            </form>
+        </div>
+        <div v-if="showList" id="list-view">
+            <div class="grid-container">
+                <div class="card" v-for="blog, index in blogs">
+                    <div class="card-header">{{ blog.title }}</div>
+                    <div class="card-body">
+                        <p class="card-text">{{ truncatedContent(blog) }}</p>
+                        <p class="card-text"><em>Author:</em> {{ blog.posted_by }}</p>
+                        <p class="card-text"><em>Posted:</em> {{ formattedDate(blog) }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="card-link" @click="readBlog(blog)">Read</a>
+                        <a href="#" class="card-link" @click="deleteBlog(blog)">Delete</a>
+                    </div>
+                </div>
+            </div>
+            <button id="add" @click="addPost">Share New Story</button> 
+        </div>
+        <div v-if="showBlog" id="reading-mode">
+            <h1>{{blog.title}}</h1>
+            <p>{{blog.content}}</p>
+            <p>{{blog.posted_by}}</p>
+            <p>Posted: {{ formattedDate(blog) }}</p>
+            <img src="../../static/images/road-trip-with-raj-o4c2zoVhjSw-unsplash.jpg">  
+            <button @click="takeMeBack">Take Me Back!</button>
+                  
+        </div>
+    </div>
+
+{% endverbatim %}
+
+{% endblock %}
